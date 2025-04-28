@@ -2,18 +2,19 @@
 
 import { useState } from "react";
 
-const ReviewForm = ({handleSubmit}) => {
+const ReviewForm = () => {
     const [name, setName] = useState('');
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
+    const [message, setMessage] = useState('');
 
     //Handle the rating click 
     const handleRating = (star) => {
         setRating(star);
     };
 
-    //Handle form submission 
-    const onSubmit = (e) => {
+    //Handle form submission and POST request
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const reviewData = {
             name,
@@ -21,14 +22,34 @@ const ReviewForm = ({handleSubmit}) => {
             comment,
         };
 
-        handleSubmit(reviewData);
-        setName('');
-        setRating(0);
-        setComment('');
+        try {
+            const response = await fetch('/api/reviews', {
+                method:'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                body:JSON.stringify(reviewData),
+            });
+
+            if(response.ok) {
+                setMessage('Review sibmitted successfully!');
+               
+                //Clear the form fields 
+                setName('');
+                setRating(0);
+                setComment('');
+            } else {
+                setMessage('Failed to submit review.');
+            }
+        } catch (error) {
+            console.error('Error submitting review:', error);
+            setMessage('An error occured. Please try again later.');
+        }
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="name">Name:</label>
                 <input
@@ -74,6 +95,7 @@ const ReviewForm = ({handleSubmit}) => {
             </div>
 
             <button type="submit">Submit Review</button>
+            {message && <p>{message}</p>}
         </form>
     );
 };
