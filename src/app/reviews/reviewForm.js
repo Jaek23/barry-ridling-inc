@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const ReviewForm = () => {
+const ReviewForm = ({onAddReview}) => {
     const [name, setName] = useState('');
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
@@ -33,12 +33,19 @@ const ReviewForm = () => {
             });
 
             if(response.ok) {
-                setMessage('Review sibmitted successfully!');
+                // const newReview = await response.json(); 
+                setMessage('Review submitted successfully!');
                
                 //Clear the form fields 
                 setName('');
                 setRating(0);
                 setComment('');
+
+                //Call addReview to update list immediately 
+                if(onAddReview) {
+                    onAddReview();
+                }
+
             } else {
                 setMessage('Failed to submit review.');
             }

@@ -2,28 +2,31 @@
 
 import { useState, useEffect } from "react";
 
-const ReviewList = () => {
-    const [reviews, setReviews] = useState([]);
+const ReviewList = ({reviews}) => {
+    if (!reviews) {
+        return <p>No reviews yet.</p>
+    }
+    // const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(false);
 
     //Fetch reviews from the backend
-    const fetchReviews = async () => {
-        setLoading(true);
-        try {
-            const response = await fetch('/api/reviews');
-            const data = await response.json();
-            setReviews(data);
-        } catch (error) {
-            console.error('Error fetching reviews:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
+    // const fetchReviews = async () => {
+    //     setLoading(true);
+    //     try {
+    //         const response = await fetch('/api/reviews');
+    //         const data = await response.json();
+    //         setReviews(data);
+    //     } catch (error) {
+    //         console.error('Error fetching reviews:', error);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     //Fetch reviews when component loads
-    useEffect(() => {
-        fetchReviews();
-    }, []);
+    // useEffect(() => {
+    //     fetchReviews();
+    // }, []);
 
     return (
         <div>

@@ -1,5 +1,4 @@
-import ReviewForm from "./reviewForm";
-import ReviewList from "./reviewList";
+import ReviewSection from "./reviewSection";
 import { metadata as importMetadata} from "@/lib/metadata";
 
 // Add this to export the metadata properly 
@@ -12,26 +11,70 @@ export const metadata = {
     },
 };
 
-// Server-side fetching function
-async function fetchReviews() {
-    try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/reviews`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch reviews');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching reviews:', error);
-        return [];
+async function fetchReviews () {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/reviews`, {
+        cache:'no-store'
+    });
+
+    if(!response.ok) {
+        throw new Error('Failed to fetch reviews');
     }
+
+    return response.json();
+}
+
+//Helper to calculate average rating
+function calculateAverageRating(reviews) {
+    if(!reviews.length) return 0;
+    const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+    return (total / reviews.length).toFixed(1);
 }
 
 export default async function ReviewPage() {
-    const reviews = await fetchReviews();
+    const initialReviews = await fetchReviews();
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Barry Ridling Inc",
+        "url": "https://www.barryridlinginc.com",
+        "description": "Interior and exterior painting services for churches, schools, homes, and commercial buildings in the DFW area.",
+        "telephone": "+1-214-989-5841",
+        "areaServed": {
+        "@type": "Place",
+        "name": "Dallas-Fort Worth Metroplex"
+        },
+        "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": calculateAverageRating(initialReviews),
+        "reviewCount": initialReviews.length
+        },
+        "review": initialReviews.map((review) => ({
+        "@type": "Review",
+        "author": {
+            "@type": "Person",
+            "name": review.name
+        },
+        "reviewBody": review.comment,
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": review.rating,
+            "bestRating": "5"
+        }
+      }))
+    };
+
     return (
+        <>
+        {/*Structured Data for SEO*/}
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}
+        />
         <div>
-            <ReviewForm/>
-            <ReviewList reviews={reviews}/>
+            <ReviewSection initialReviews={initialReviews}/>
         </div>
+        </>
+        
     ) 
 }
