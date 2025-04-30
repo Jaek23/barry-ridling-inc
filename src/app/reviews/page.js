@@ -40,6 +40,28 @@ export default async function ReviewPage() {
         "url": "https://www.barryridlinginc.com",
         "description": "Interior and exterior painting services for churches, schools, homes, and commercial buildings in the DFW area.",
         "telephone": "+1-214-989-5841",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6405 W. El Dorado Parkway Suite 600",
+            "addressLocality": "Mckinney",
+            "addressRegion": "TX",
+            "postalCode": "75070",
+            "addressCountry": "US"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+1-214-989-5841",
+                "contactType": "customer service",
+                "areaServed": "US"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+1-972-238-8767",
+                "contactType": "office",
+                "areaServed": "US"
+            }
+        ],
         "areaServed": {
         "@type": "Place",
         "name": "Dallas-Fort Worth Metroplex"
