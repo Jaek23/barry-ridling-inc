@@ -1,50 +1,31 @@
 'use client';
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import styles from './reviewStyles/reviewList.module.css';
 
 const ReviewList = ({reviews}) => {
     if (!reviews) {
         return <p>No reviews yet.</p>
     }
-    // const [reviews, setReviews] = useState([]);
+
     const [loading, setLoading] = useState(false);
-
-    //Fetch reviews from the backend
-    // const fetchReviews = async () => {
-    //     setLoading(true);
-    //     try {
-    //         const response = await fetch('/api/reviews');
-    //         const data = await response.json();
-    //         setReviews(data);
-    //     } catch (error) {
-    //         console.error('Error fetching reviews:', error);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-
-    //Fetch reviews when component loads
-    // useEffect(() => {
-    //     fetchReviews();
-    // }, []);
 
     return (
         <div>
-            <h2>Customer Reviews</h2>
+            <h2 className={styles.heading}>Customer Reviews</h2>
             {loading ? (
-                <p>Loading reviews</p>
+                <p className={styles.message}>Loading reviews</p>
             ) : reviews.length === 0 ? (
-                <p>No reviews yet.</p>
+                <p className={styles.message}>No reviews yet.</p>
             ) : (
-                <ul>
+                <div className={styles.reviewList}>
                     {reviews.map((review) => (
-                        <li key={review._id}>
-                            <p><strong>{review.name}</strong></p>
-                            <p>Rating: {Array(review.rating).fill('★').join('')}</p>
-                            <p>{review.comment}</p>
-                        </li>
+                        <div key={review._id} className={styles.reviewItem}>
+                            <p className={styles.reviewName}><strong> Name: {review.name}</strong></p>
+                            <p className={styles.reviewRating}><strong>Rating:</strong>{Array(review.rating).fill('★').join('')}</p>
+                            <p className={styles.reviewComment}><strong>Comment:</strong>{review.comment}</p>
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     );

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import ReviewForm from "./reviewForm";
 import ReviewList from "./reviewList";
+import styles from './reviewStyles/reviewSection.module.css';
 
 export default function ReviewSection({initialReviews}) {
     const [reviews, setReviews] = useState(initialReviews || []);
@@ -29,16 +30,20 @@ export default function ReviewSection({initialReviews}) {
     }, [])
 
     return (
-        <div>
-            <ReviewForm onAddReview={handleAddReview}/>
-            {loading ? (
-                <div style={{textAlign:'center', marginTop: '2rem'}}>
-                    <div className="spinner"></div>
-                    <p>Loading reviews...</p>
-                </div>
-            ) : (
-                <ReviewList reviews={reviews}/>
-            )}
+        <div className={styles.container}>
+            <div className={styles.formContainer}>
+                <ReviewForm onAddReview={handleAddReview}/>
+            </div>
+            <div>
+                {loading ? (
+                    <div style={styles.loading}>
+                        <div className={styles.spinner}></div>
+                        <p className={styles.loadingText}>Loading reviews...</p>
+                    </div>
+                ) : (
+                    <ReviewList reviews={reviews}/>
+                )}
+            </div>
         </div>
     );
 }

@@ -4,7 +4,9 @@ import Link from 'next/link';
 export default function Navbar() {
     return (
         <nav style={navStyles}>
-            <h1 style={logoStyles}>Barry Ridling inc.</h1>
+            <Link href="/" style={logoLinkStyles}>
+                <h1 style={logoStyles}>Barry Ridling inc.</h1>
+            </Link>
             <ul style={navListStyles}>
                 <li><Link href="/services">Services</Link></li>
                 <li><Link href="/gallery">Gallery</Link></li>
@@ -32,4 +34,9 @@ const navListStyles = {
     display: 'flex',
     listStyle:'none',
     gap:'1rem'
+};
+
+const logoLinkStyles = {
+    textDecoration: 'none',
+    color: 'inherit', 
 };

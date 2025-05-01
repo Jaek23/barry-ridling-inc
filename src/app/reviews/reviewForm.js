@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import styles from './reviewStyles/reviewForm.module.css'
 
 const ReviewForm = ({onAddReview}) => {
     const [name, setName] = useState('');
@@ -56,8 +57,9 @@ const ReviewForm = ({onAddReview}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <h2>Submit a Review</h2>
+            <div className={styles.group}>
                 <label htmlFor="name">Name:</label>
                 <input
                     type="text"
@@ -68,22 +70,16 @@ const ReviewForm = ({onAddReview}) => {
                 />
             </div>
 
-            <div>
+            <div className={styles.group}>
                 <label>Rating:</label>
-                <div style={{display:'flex', gap:'5px'}}>
+                <div className={styles.stars}>
                     {/*Render Unicode stars*/}
                     {[1,2,3,4,5].map((star) => (
                         <button
                             key={star}
                             type="button"
                             onClick={() => handleRating(star)}
-                            style={{
-                                fontSize:'24px',
-                                color: star <=rating ? 'gold' : 'gray', //Change color based on the rating 
-                                background:'none',
-                                border:'none',
-                                cursor:'pointer',
-                            }}
+                            className={`${styles.star} ${star <= rating ? styles.active : ''}`}
                         >
                             {star <= rating ? '★' : '☆'} {/* Unicode for filled and empty stars */}
                         </button>
@@ -91,7 +87,7 @@ const ReviewForm = ({onAddReview}) => {
                 </div>
             </div>
 
-            <div>
+            <div className={styles.group}>
                 <label htmlFor="comment">Comment:</label>
                 <textarea
                     id="comment"
@@ -101,8 +97,8 @@ const ReviewForm = ({onAddReview}) => {
                 ></textarea>
             </div>
 
-            <button type="submit">Submit Review</button>
-            {message && <p>{message}</p>}
+            <button type="submit" className={styles.submit}>Submit Review</button>
+            {message && <p className={styles.message}>{message}</p>}
         </form>
     );
 };

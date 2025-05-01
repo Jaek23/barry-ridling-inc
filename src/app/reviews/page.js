@@ -1,14 +1,9 @@
 import ReviewSection from "./reviewSection";
-import { metadata as importMetadata} from "@/lib/metadata";
+import { metadata as allMetadata} from "@/lib/metadata";
 
 // Add this to export the metadata properly 
 export const metadata = {
-    title: importMetadata.title,
-    description: importMetadata.description,
-    keywords: importMetadata.keywords,
-    alternates: {
-        canonical: importMetadata.alternates.canonical,
-    },
+    ...allMetadata.review,
 };
 
 async function fetchReviews () {
@@ -96,7 +91,6 @@ export default async function ReviewPage() {
         <div>
             <ReviewSection initialReviews={initialReviews}/>
         </div>
-        </>
-        
+        </>        
     ) 
 }
