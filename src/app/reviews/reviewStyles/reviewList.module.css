@@ -19,20 +19,59 @@
 
 .reviewList {
    display: flex;
-   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-top: 2rem;
+   width: 100%;
    gap: 1rem;
 }
 
 .reviewItem {
+    width: 500px;
     padding: 1rem;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
 }
 
 .reviewName,
 .reviewRating,
 .reviewComment {
     margin: 0.3rem 0;
+}
+
+.truncated {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4; /* optional: linter will be happy, browsers will ignore if unsupported */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expanded {
+    display: block;
+}
+
+.readMoreButton {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    color: #0070f3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.readMoreButton:hover {
+    color: #0050c2;
 }

@@ -34,7 +34,6 @@ const ReviewForm = ({onAddReview}) => {
             });
 
             if(response.ok) {
-                // const newReview = await response.json(); 
                 setMessage('Review submitted successfully!');
                
                 //Clear the form fields 
@@ -58,7 +57,7 @@ const ReviewForm = ({onAddReview}) => {
 
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
-            <h2>Submit a Review</h2>
+            <h2 className={styles.heading}>Submit a Review</h2>
             <div className={styles.group}>
                 <label htmlFor="name">Name:</label>
                 <input
