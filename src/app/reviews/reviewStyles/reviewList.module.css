@@ -6,9 +6,10 @@
 } */
 
 .heading {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
+    color: var(--navy);
 }
 
 .message {
@@ -23,16 +24,15 @@
    justify-content: center;
    margin-top: 2rem;
    width: 100%;
-   gap: 1rem;
+   gap: 1.5rem;
 }
 
 .reviewItem {
     width: 500px;
-    padding: 1rem;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    background-color: var(--text-light);
+    border: 3px solid var(--navy);
+    border-radius: 12px;
     word-wrap: break-word;
     text-align: left;
     display: flex;
@@ -41,10 +41,25 @@
     transition: all 0.3s ease;
 }
 
+.reviewItem:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
 .reviewName,
 .reviewRating,
 .reviewComment {
-    margin: 0.3rem 0;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.reviewComment {
+    font-family: inherit;
+}
+
+.stars {
+    color: #f4b400; /* gold stars */
+    font-size: 1.2rem;
 }
 
 .truncated {
@@ -61,11 +76,9 @@
 }
 
 .readMoreButton {
-    align-self: flex-start;
     margin-top: 0.5rem;
-    padding: 0.3rem 0.6rem;
     font-size: 0.85rem;
-    color: #0070f3;
+    color: var(--light-navy);
     background: none;
     border: none;
     cursor: pointer;
@@ -73,5 +86,6 @@
 }
 
 .readMoreButton:hover {
-    color: #0050c2;
+    color: var(--navy);
 }
+

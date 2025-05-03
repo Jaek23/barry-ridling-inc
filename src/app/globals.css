@@ -1,14 +1,8 @@
-/* .spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius:50%;
-    width:60px;
-    height:60px;
-    animation: spin 1s linear infinite;
-    margin:0 auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-} */
+:root {
+    --navy: #1e3a5f;
+    --light-navy: #2c4a70;
+    --text-light: #f9f9f9;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }

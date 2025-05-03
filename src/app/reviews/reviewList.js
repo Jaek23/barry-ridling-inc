@@ -31,7 +31,12 @@ const ReviewList = ({reviews}) => {
                         return (
                             <div key={review._id} className={styles.reviewItem}>
                                 <p className={styles.reviewName}><strong>Name:</strong> {review.name}</p>
-                                <p className={styles.reviewRating}><strong>Rating:</strong> {Array(review.rating).fill('★').join('')}</p>
+                                <p className={styles.reviewRating}>
+                                    <strong>Rating:</strong>{' '}
+                                    <span className={styles.stars}>
+                                        {Array(review.rating).fill('★').join('')}
+                                    </span>
+                                </p>
                                 <p className={`${styles.reviewComment} ${isExpanded ? styles.expanded : styles.truncated}`}>
                                     <strong>Comment:</strong> {review.comment}
                                 </p>
