@@ -51,7 +51,6 @@ export default function EstimatePage () {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <main>
-            <h1>Request a FREE ESTIMATE!</h1>
             <EstimateForm/>
         </main>
         </>

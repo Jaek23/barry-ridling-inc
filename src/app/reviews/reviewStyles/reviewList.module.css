@@ -28,7 +28,8 @@
 }
 
 .reviewItem {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     padding: 1.5rem;
     background-color: var(--text-light);
     border: 3px solid var(--navy);
@@ -89,3 +90,43 @@
     color: var(--navy);
 }
 
+/* Mobile Responsiveness */
+@media (max-width:600px) {
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .reviewItem {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .reviewRating,
+    .reviewName,
+    .reviewComment {
+        font-size: 1rem;
+    }
+
+    .readMoreButton {
+        font-size: 1.2rem;
+    }
+
+    .stars {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 601px) and (max-width: 900px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .reviewItem {
+        padding: 1.5rem;
+    }
+
+    .stars {
+        font-size: 1.4rem;
+    }
+}
