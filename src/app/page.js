@@ -5,15 +5,33 @@ export default function HomePage() {
     return (
         <main>
             <h1>Gallery</h1>
-            <div style={{display:'flex', flexWrap:'wrap', gap:'1rem', justifyContent:'space-around'}}>
+            <div 
+                style={{
+                    display:'flex', 
+                    flexWrap:'wrap', 
+                    gap:'1rem', 
+                    justifyContent:'center'
+                    }}
+                >
                 {galleryImages.map((image, index) => (
-                    <div key={index} style={{position:'relative', width:'300px', height:'200px'}}>
+                    <div key={index} 
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            overflow: "hidden",
+                            borderRadius: "8px",
+                            border: "1px solid #eee",
+                    }}>
                         <Image
                             src={image.src}
                             alt={image.alt}
-                            layout="fill"
-                            objectFit="cover"
-                            style={{borderRadius:'8px'}}
+                            width={300}
+                            height={250}
+                            unoptimized
+                            style={{
+                                borderRadius: "8px",
+                            }}
                         />
                     </div>
                 ))}
