@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <nav style={navStyles}>
             <Link href="/" style={logoLinkStyles}>
-                <h1 style={logoStyles}>Barry Ridling inc.</h1>
+                <h1 style={logoStyles}>Barry Ridling Painting</h1>
             </Link>
             <ul style={navListStyles}>
                 <li><Link href="/services">Services</Link></li>

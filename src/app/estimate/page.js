@@ -11,7 +11,7 @@ export default function EstimatePage () {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Barry Ridling Inc",
-        "url": "https://www.barryridlinginc.com",
+        "url": "https://www.barryridlingpainting.com",
         "description": "Interior and exterior painting services for churches, schools, homes, and commercial buildings in the DFW area.",
         "telephone": "+1-214-989-5841",
         "address": {
