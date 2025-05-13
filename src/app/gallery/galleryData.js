@@ -39,10 +39,10 @@ const galleryImages = [
         src: "/master-room-painting.jpg",
         alt: "Master bedroom interior painting with soft color tones",
     },
-    {
-        src: "/church-painting.jpg",
-        alt: "Exterior church painting with detailed trim work ",
-    },
+    // {
+    //     src: "/church-painting.jpg",
+    //     alt: "Exterior church painting with detailed trim work ",
+    // },
     {
         src: "/exterior-brick-house-painting.jpg",
         alt: "Freshly painted brick house with classic red finish",

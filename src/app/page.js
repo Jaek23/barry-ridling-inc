@@ -1,6 +1,10 @@
 import galleryImages from "./gallery/galleryData";
 import Image from "next/image";
 import { metadata as allMetadata } from "@/lib/metadata";
+import styles from './homePage.module.css';
+import Link from 'next/link';
+import GalleryModal from "./gallery/galleryModal";
+import { FaPaintRoller, FaHome, FaLayerGroup } from 'react-icons/fa';
 
 //Export SEO metadata
 export const metadata = {
@@ -59,26 +63,21 @@ export default function HomePage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
-            <main style={{padding:"2rem"}}>
+            <main className={styles.main}>
                 {/* Services Section*/}
-                <section style={{marginBottom:"3rem"}}>
+                <section className={styles.serviceSection}>
                     <h1>Our Services</h1>
-                    <p style={{maxWidth:"600px", marginBottom:"1.5rem"}}>
-                        <strong>Barry Ridling Painting</strong> is a trusted local painting company specializing in both 
-                        interior and exterior projects. With expertise in all textures and finishes, we proudly Serve
-                        residential, commercial, and institutional porperties like churches and schools. Whether you're
-                        refreshing a home or updating a large facility, we deliver quality craftsmanship and offer
-                        free estimates!
+                    <p>
+                        <strong>Barry Ridling Painting</strong> is a trusted, locally owned painting company with a strong reputation for delivering
+                        high-quality interior and exterior painting services. With years of hands-on experience, we specialize in a
+                        wide range of textures, finishes, and custom color applications tailored to suit each client’s unique vision.
+                        Our skilled team proudly serves residential homes, commercial spaces, and institutional buildings such as
+                        churches and schools. From small touch-ups to complete transformations, we bring precision, professionalism, and a personal
+                        touch to every project. Whether you're looking to refresh your living room, modernize
+                        your kitchen, or give your facility a professional edge, Barry Ridling Painting is committed to bringing your
+                        space to life. Free estimates and consultations are always available—let’s make your vision a reality.
                     </p>
-                    <div
-                        style={{
-                            display:"flex",
-                            flexWrap:"wrap",
-                            gap:"2rem",
-                            justifyContent:"center",
-                            alignItems:"flex-start"
-                        }}
-                    >
+                    <div className={styles.serviceList}>
                         <div>
                             <h2>What We Do</h2>
                             <ul>
@@ -99,43 +98,50 @@ export default function HomePage() {
                     </div>
                 </section>
 
+                <div className={styles.buttonRow}>
+                    <Link href="/reviews">
+                        <button className={styles.homeButton}>Submit a Review</button>
+                    </Link>
+                    <Link href="/estimate">
+                        <button className={styles.homeButton}>Free Estimates</button>
+                    </Link>
+                </div>
+
+                {/* Service Cards Section */}
+                <section className={styles.cardsSection}>
+                    <div className={styles.cardsContainer}>
+                        <div className={styles.card}>
+                            <FaPaintRoller className={styles.icon} />
+                            <h3>Interior Painting</h3>
+                            <p>
+                               Refresh your indoor spaces with clean, even coast and professional results.
+                               We handle living rooms, kitchens, bedrooms, and more with care and precision. 
+                            </p>
+                        </div>
+                        <div className={styles.card}>
+                            <FaHome className={styles.icon} />
+                            <h3>Exterior Painting</h3>
+                            <p>
+                               Make a great first impression with exterior painting that stands up to the elements.
+                               From trim to full facades, we deliver long lasting curb appeal.
+                            </p>
+                        </div>
+                        <div className={styles.card}>
+                            <FaLayerGroup className={styles.icon} />
+                            <h3>All Textures & Finishes</h3>
+                            <p>
+                               We work with all surface types and finishes-from smooth walls to textured ceilings-
+                               providing custom solutions tailored to your style.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 {/*Gallery Section*/}
-                <section>
+                <section className={styles.gallerySection}>
                     <h1>Gallery</h1>
                     <p><strong>Check out our previous work!</strong></p>
-                    <div
-                        style={{
-                            display:"flex",
-                            flexWrap:"wrap",
-                            gap:"1rem",
-                            justifyContent:"center",
-                        }}
-                    >
-                        {galleryImages.map((image, index) => (
-                            <div
-                                key={index}
-                                style={{
-                                    display:"flex",
-                                    justifyContent:"center",
-                                    alignItems:"center",
-                                    overflow:"hidden",
-                                    borderRadius:"8px",
-                                    border:"1px solid #eee"
-                                }}
-                            >
-                                <Image
-                                    src={image.src}
-                                    alt={image.alt}
-                                    width={300}
-                                    height={250}
-                                    unoptimized
-                                    style={{
-                                        borderRadius:"8px"
-                                    }}
-                                />
-                            </div>
-                        ))}
-                    </div>
+                    <GalleryModal images={galleryImages} />
                 </section>
             </main>
         </>
