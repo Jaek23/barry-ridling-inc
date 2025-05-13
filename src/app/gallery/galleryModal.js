@@ -45,22 +45,24 @@ export default function GalleryModal({images}) {
 
             {isOpen && (
                 <div className={styles.modalOverlay} onClick={closeModal}>
-                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                        <button onClick={closeModal} className={styles.closeBtn}>✕</button>
-                        <button onClick={prevImage} className={styles.navBtn}>‹</button>
+                    <div className={styles.imageWrapper} onClick={(e) => e.stopPropagation()}>
+                        <div className={styles.imageContainer}>
+                            <button onClick={closeModal} className={styles.closeBtn}>✕</button>
+                            <button onClick={prevImage} className={`${styles.navBtn} ${styles.leftBtn}`}>‹</button>
+                            <div className={styles.imageInner}>
+                                <Image
+                                    src={images[currentIndex].src}
+                                    alt={images[currentIndex].alt}
+                                    width={1000}
+                                    height={600}
+                                    // fill
+                                    className={styles.modalImage}
+                                    unoptimized
+                                />
+                            </div>
 
-                        <div className={styles.modalImageWrapper}>
-                            <Image
-                                src={images[currentIndex].src}
-                                alt={images[currentIndex].alt}
-                                // width={650}
-                                // height={350}
-                                fill
-                                className={styles.modalImage}
-                                unoptimized
-                            />
+                            <button onClick={nextImage} className={`${styles.navBtn} ${styles.rightBtn}`}>›</button>
                         </div>
-                        <button onClick={nextImage} className={styles.navBtn}>›</button>
                     </div>
                 </div>
             )}

@@ -1,0 +1,47 @@
+.footer {
+  /* background-color: #002B5B; */
+  background-color: var(--navy);
+  color: white;
+  /* padding: 2rem 1.5rem; */
+  padding: 1.2rem 1rem; /* Reduced padding */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin-top: 50px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.companyName {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.contact a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: #cccccc;
+}

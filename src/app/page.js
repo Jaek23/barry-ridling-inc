@@ -114,7 +114,7 @@ export default function HomePage() {
                             <FaPaintRoller className={styles.icon} />
                             <h3>Interior Painting</h3>
                             <p>
-                               Refresh your indoor spaces with clean, even coast and professional results.
+                               Refresh your indoor spaces with clean, even coats and professional results.
                                We handle living rooms, kitchens, bedrooms, and more with care and precision. 
                             </p>
                         </div>
