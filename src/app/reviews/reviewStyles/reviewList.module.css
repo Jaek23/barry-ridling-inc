@@ -10,7 +10,7 @@
     margin-bottom: 1rem;
     /* margin-top: 1rem; */
     text-align: center;
-    color: var(--navy);
+    color: var(--light-navy);
 }
 
 .message {
@@ -33,7 +33,7 @@
     max-width: 500px;
     padding: 1.5rem;
     background-color: var(--text-light);
-    border: 3px solid var(--navy);
+    border: 3px solid var(--light-navy);
     border-radius: 12px;
     word-wrap: break-word;
     text-align: left;

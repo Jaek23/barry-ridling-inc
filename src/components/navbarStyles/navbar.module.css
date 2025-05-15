@@ -4,10 +4,26 @@
   align-items: center;
   padding: 2.4rem 2rem;
   /* background-color: #002B5B; */
-  background-color: var(--navy);
+  /* background-color: var(--navy); */
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
+  position: relative; 
+  background-image: 
+  repeating-linear-gradient(
+    45deg, 
+    rgba(255, 255, 255, 0.06) 0px, 
+    rgba(255, 255, 255, 0.06) 1px, 
+    transparent 1px, 
+    transparent 6px
+  ),
+  repeating-linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, 0.06) 0px, 
+    rgba(255, 255, 255, 0.06) 1px, 
+    transparent 1px, 
+    transparent 6px
+  ),
+   linear-gradient(to right, var(--navy), var(--light-navy));
 }
 
 .logoLink {
@@ -22,22 +38,34 @@
 }
 
 .icon {
-  font-size: 2rem;
-  color: #FFD700;
+  font-size: 2.4rem;
+  color: #fbc02d;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+  transform: rotate(-15deg);
 }
 
 .logoText {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #fbc02d;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.2;
 }
 
 .navLinks {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  /* gap: 2rem; */
   margin: 0;
   padding: 0;
+  gap: 1.5rem;
 }
 
 .navLink {
@@ -47,12 +75,79 @@
   font-weight: bold;
   transition: color 0.3s ease;
   cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #fbc02d; /* gold/yellow highlight */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
 }
 
 .hamburger {
   display: none;
   cursor: pointer;
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: #fbc02d;
+}
+
+.navRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* .phoneItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.3rem;
+} */
+
+.desktopPhoneItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.mobilePhoneItem {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.phoneIcon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.phoneNumber {
+  color: white;
 }
 
 /* MOBILE MENU STYLES */
@@ -75,5 +170,13 @@
 
   .hamburger {
     display: block;
+  }
+
+  .desktopPhoneItem {
+    display: none;
+  }
+
+  .mobilePhoneItem {
+    display: flex;
   }
 }

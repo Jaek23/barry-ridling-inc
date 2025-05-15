@@ -64,48 +64,15 @@ export default function HomePage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
             <main className={styles.main}>
-                {/* Services Section*/}
-                <section className={styles.serviceSection}>
-                    <h1>Our Services</h1>
-                    <p>
-                        <strong>Barry Ridling Painting</strong> is a trusted, locally owned painting company with a strong reputation for delivering
-                        high-quality interior and exterior painting services. With years of hands-on experience, we specialize in a
-                        wide range of textures, finishes, and custom color applications tailored to suit each client’s unique vision.
-                        Our skilled team proudly serves residential homes, commercial spaces, and institutional buildings such as
-                        churches and schools. From small touch-ups to complete transformations, we bring precision, professionalism, and a personal
-                        touch to every project. Whether you're looking to refresh your living room, modernize
-                        your kitchen, or give your facility a professional edge, Barry Ridling Painting is committed to bringing your
-                        space to life. Free estimates and consultations are always available—let’s make your vision a reality.
-                    </p>
-                    <div className={styles.serviceList}>
-                        <div>
-                            <h2>What We Do</h2>
-                            <ul>
-                                <li>Interior Painting</li>
-                                <li>Exterior Painting</li>
-                                <li>All Textures & Finishes</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2>Who We Serve</h2>
-                            <ul>
-                                <li>Residential Homes</li>
-                                <li>Commercial Properties</li>
-                                <li>Churches</li>
-                                <li>Schools</li>
-                            </ul>
-                        </div>     
-                    </div>
-                </section>
-
-                <div className={styles.buttonRow}>
-                    <Link href="/reviews">
-                        <button className={styles.homeButton}>Submit a Review</button>
-                    </Link>
+                {/*Hero Section */}
+                <section className={styles.heroSection}>
+                    <h1>Barry Ridling Painting | A Quality Professional Painting Service</h1>
+                    <p>Interior & Exterior Painting You Can Count On!</p>
+                    <p>Get your FREE ESTIMATE TODAY!</p>
                     <Link href="/estimate">
-                        <button className={styles.homeButton}>Free Estimates</button>
+                        <button className={styles.heroButton}>Get a Free Estimate</button>
                     </Link>
-                </div>
+                </section>
 
                 {/* Service Cards Section */}
                 <section className={styles.cardsSection}>
@@ -136,6 +103,70 @@ export default function HomePage() {
                         </div>
                     </div>
                 </section>
+
+                {/* Quick Service Summary Section */}
+                <section className={styles.quickSummary} >
+                <div className={styles.serviceList}>
+                    <div>
+                        <h3>What We Do</h3>
+                        <ul>
+                            <li>Interior Painting</li>
+                            <li>Exterior Painting</li>
+                            <li>All Textures & Finishes</li>
+                        </ul>
+                    </div>
+                    <div> 
+                        <h3>Who We Serve</h3>
+                        <ul>
+                            <li>Residential Homes</li>
+                            <li>Commercial Properties</li>
+                            <li>Churches</li>
+                            <li>Schools</li>
+                        </ul>
+                    </div> 
+                    <div className={styles.calloutBox}>
+                        <p>
+                            Ready to bring new life to your home or business? Contact <strong>Barry Ridling Painting</strong> today at <strong>214-989-5841</strong> for a free, no-obligation estimate and expert advice tailored to your project needs.
+                        </p>
+                    </div>    
+                </div>
+                </section>
+
+                {/* Services Section*/}
+                <section className={styles.serviceSection}>
+                    <div className={styles.serviceContentWrapper}>
+                        
+                        {/* Left Text Content */}
+                        <div className={styles.textWrapper}>
+                        <h1>About Us!</h1>
+                        <p>
+                            <strong>Barry Ridling Painting</strong> is a trusted, locally owned painting company with a strong reputation for delivering
+                            high-quality interior and exterior painting services. With years of hands-on experience, we specialize in a
+                            wide range of textures, finishes, and custom color applications tailored to suit each client’s unique vision.
+                            Our skilled team proudly serves residential homes, commercial spaces, and institutional buildings such as
+                            churches and schools. From small touch-ups to complete transformations, we bring precision, professionalism, and a personal
+                            touch to every project. Whether you're looking to refresh your living room, modernize
+                            your kitchen, or give your facility a professional edge, Barry Ridling Painting is committed to bringing your
+                            space to life. Free estimates and consultations are always available—let’s make your vision a reality.
+                        </p>
+
+                        {/* Call to Action Buttons */}
+                        <div className={styles.buttonRow}>
+                            <Link href="/reviews">
+                            <button className={styles.homeButton}>Submit a Review</button>
+                            </Link>
+                            <Link href="/estimate">
+                            <button className={styles.homeButton}>Free Estimates</button>
+                            </Link>
+                        </div>
+                        </div>
+
+                        {/* Right Image */}
+                        <div className={styles.imageWrapper}>
+                        <img src="/exterior-big-house-painting.jpg" alt="Exterior house painting" />
+                        </div>
+                    </div>
+                </section>             
 
                 {/*Gallery Section*/}
                 <section className={styles.gallerySection}>
