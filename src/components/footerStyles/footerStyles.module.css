@@ -1,10 +1,7 @@
 .footer {
-  /* background-color: #002B5B; */
-  /* background-color: var(--navy); */
   background-image: linear-gradient(to right, var(--navy), var(--light-navy));
   color: white;
-  /* padding: 2rem 1.5rem; */
-  padding: 1.2rem 1rem; /* Reduced padding */
+  padding: 1.2rem 1rem; 
   text-align: center;
   font-family: 'Arial', sans-serif;
   margin-top: 50px;
