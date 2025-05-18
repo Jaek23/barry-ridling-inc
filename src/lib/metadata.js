@@ -1,14 +1,14 @@
 export const metadata = {
     review: {
         title: "Customer Reviews | Barry Ridling Painting", 
-        description: "Read real customer reviews for Barry Ridling Inc, offering interior and exterior painting, all textures and finishes, for churches, schools, residential, and commerical properties. Free estimates available.",
+        description: "Explore verified customer reviews for Barry Ridling Inc—trusted experts in residential, commercial, church, and school painting across the DFW area. Interior & exterior. Free estimates available.",
         keywords: [
             "Barry Ridling Painting",
             "painting services",
             "interior painting",
             "exterior painting",
             "residential painting",
-            "commerical painting",
+            "commercial painting",
             "church painting",
             "school painting",
             "best painters near me",
@@ -25,8 +25,8 @@ export const metadata = {
     },
 
     estimate: {
-        title: "Free Estimate | Barry Ridling Painting",
-        description: "Request a free painting estimate from Barry Ridling inc. We specialize in interior and exterior painting, all textures and finishes, for churches, schools, residential, commercial properties across the Dallas-Fort worth area.",
+        title: "Free Painting Estimate in DFW | Barry Ridling Painting",
+        description: "Get a free painting estimate from Barry Ridling Inc—trusted painting contractors in the Dallas-Fort Worth area. We specialize in interior and exterior painting for homes, churches, schools, and businesses.",
         keywords: [
             "Barry Ridling Painting",
             "free painting estimate",
@@ -72,6 +72,18 @@ export const metadata = {
         ],
         alternates: {
             canonical: "https://www.barryridlingpainting.com/"
+        }
+    },
+
+    thankyou: {
+        title: "Thank You | Barry Ridling Painting",
+        description: "Thank you for contacting Barry Ridling Painting. Your request has been received and we will be in touch shortly.",
+        robots: {
+            index: false,
+            follow: false,
+        },
+        alternates: {
+            canonical: "https://www.barryridlingpainting.com/thank-you"
         }
     }
 };

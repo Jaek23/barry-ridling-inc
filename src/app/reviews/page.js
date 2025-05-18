@@ -31,9 +31,9 @@ export default async function ReviewPage() {
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Barry Ridling Inc",
+        "name": "Barry Ridling Painting",
         "url": "https://www.barryridlingpainting.com",
-        "description": "Interior and exterior painting services for churches, schools, homes, and commercial buildings in the DFW area.",
+        "description": "Barry Ridling Inc provides professional interior and exterior painting services for churches, schools, homes, and commercial buildings across the Dallas-Fort Worth metroplex. Read verified customer reviews and testimonials.",
         "telephone": "+1-214-989-5841",
         "address": {
             "@type": "PostalAddress",
@@ -70,14 +70,19 @@ export default async function ReviewPage() {
         "@type": "Review",
         "author": {
             "@type": "Person",
-            "name": review.name
+            "name": review.name || "Anonymous"
         },
         "reviewBody": review.comment,
         "reviewRating": {
             "@type": "Rating",
             "ratingValue": review.rating,
-            "bestRating": "5"
-        }
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": "Barry Ridling Painting"
+    }
       }))
     };
 

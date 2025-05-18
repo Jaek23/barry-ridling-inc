@@ -10,7 +10,7 @@ export default function EstimatePage () {
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Barry Ridling Inc",
+        "name": "Barry Ridling Painting",
         "url": "https://www.barryridlingpainting.com",
         "description": "Interior and exterior painting services for churches, schools, homes, and commercial buildings in the DFW area.",
         "telephone": "+1-214-989-5841",
@@ -40,7 +40,23 @@ export default function EstimatePage () {
         "@type": "Place",
         "name": "Dallas-Fort Worth Metroplex"
         },
-        "serviceType": "Interior and Exterior Painting Services"
+        "serviceType": "Interior and Exterior Painting Services",
+        "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+        "@type": "Service",
+        "name": "Free Painting Estimate",
+        "description": "Request a free estimate for interior or exterior painting services in the Dallas-Fort Worth metroplex.",
+        "areaServed": {
+            "@type": "Place",
+            "name": "Dallas-Fort Worth"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Barry Ridling Inc"
+      }
+    }
+  }
     };
 
     return (

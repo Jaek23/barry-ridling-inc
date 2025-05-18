@@ -54,7 +54,12 @@ export default function HomePage() {
       "Church Painting",
       "School Painting"
     ],
-    "image": "https://www.barryridlingpainting.com/exterior-big-house-painting.jpg"
+    "image": [
+        "https://www.barryridlingpainting.com/exterior-big-house-painting.jpg",
+        "https://www.barryridlingpainting.com/master-room-painting",
+        "https://www.barryridlingpainting.com/bathroom-painting",
+        "https://www.barryridlingpainting.com/kitchen-living-painting"
+    ] 
   };
 
     return (

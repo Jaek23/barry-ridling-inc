@@ -1,5 +1,4 @@
 import clientPromise from "@/lib/mongodb";
-import { application } from "express";
 
 export async function POST(request) {
     try {

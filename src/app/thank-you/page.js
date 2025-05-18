@@ -1,3 +1,11 @@
+import {metadata as allMetadata} from "@/lib/metadata";
+
+//Add this to export the metadata properly 
+export const metadata = {
+    ...allMetadata.thankyou,
+};
+
+
 export default function ThankYouPage () {
     return (
         <div style={{ 
