@@ -16,7 +16,7 @@ export default function ThankYouPage () {
             <main style={{ flex: 1, padding: '2rem', textAlign: 'center'}}>
                 <h1 style={{color:'var(--light-navy)'}}>Thank you for submitting your request!</h1>
                 <p>Your estimate request has been successfully sent.</p>
-                <p>We'll get back to you as soon as possible.</p>
+                <p>We&apos;ll get back to you as soon as possible.</p>
                 <a
                     href="/estimate"
                     style={{

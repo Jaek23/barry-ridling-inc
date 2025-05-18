@@ -147,12 +147,12 @@ export default function HomePage() {
                         <p>
                             <strong>Barry Ridling Painting</strong> is a trusted, locally owned painting company with a strong reputation for delivering
                             high-quality interior and exterior painting services. With years of hands-on experience, we specialize in a
-                            wide range of textures, finishes, and custom color applications tailored to suit each client’s unique vision.
+                            wide range of textures, finishes, and custom color applications tailored to suit each client&apos;s unique vision.
                             Our skilled team proudly serves residential homes, commercial spaces, and institutional buildings such as
                             churches and schools. From small touch-ups to complete transformations, we bring precision, professionalism, and a personal
                             touch to every project. Whether you're looking to refresh your living room, modernize
                             your kitchen, or give your facility a professional edge, Barry Ridling Painting is committed to bringing your
-                            space to life. Free estimates and consultations are always available—let’s make your vision a reality.
+                            space to life. Free estimates and consultations are always available—let&apos;s make your vision a reality.
                         </p>
 
                         {/* Call to Action Buttons */}
