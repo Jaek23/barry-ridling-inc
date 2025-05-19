@@ -64,13 +64,24 @@
   height: auto;
   max-height: 80vh;
   aspect-ratio: 5 / 3;
-  background-color: #000; /* or any solid neutral color */
+  background-color: #000; 
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
   overflow: hidden;
 }
+
+/* .imageInner {
+  width: 90vw;
+  max-height: 80vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+} */
 
 .modalImage {
   max-width: 100%;
@@ -167,6 +178,12 @@
     height:auto;
     object-fit: contain;
   }
+
+  .imageInner {
+    width: 95vw;
+    max-height: 70vh;
+  }
+
 }
 
 /* ------------------- TABLET ------------------- */

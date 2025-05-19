@@ -55,6 +55,7 @@ export default function GalleryModal({images}) {
                                     alt={images[currentIndex].alt}
                                     width={1000}
                                     height={600}
+                                    layout="responsive"
                                     // fill
                                     className={styles.modalImage}
                                     unoptimized
