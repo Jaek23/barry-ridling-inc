@@ -7,7 +7,8 @@ export const metadata = {
 };
 
 async function fetchReviews () {
-    const response = await fetch('/api/reviews', {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/reviews`, {
         cache:'no-store'
     });
 
