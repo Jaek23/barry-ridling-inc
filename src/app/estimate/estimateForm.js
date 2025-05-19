@@ -1,6 +1,8 @@
 import styles from './estimateStyle/estimateForm.module.css';
 
 export default function EstimateForm () {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
     return (
         <div className={styles.wrapper}>
             <form 
@@ -9,7 +11,7 @@ export default function EstimateForm () {
                 className={styles.form}
             >
                 <input type="hidden" name="_captcha" value="false"/>
-                <input type="hidden" name="_next" value="http://localhost:3000/thank-you"/>
+                <input type="hidden" name="_next" value={`${baseUrl}/thank-you`} />
                 <input type="hidden" name="_template" value="table"/>
 
                 <h2 className={styles.heading}>Request a Free Estimate!</h2>
