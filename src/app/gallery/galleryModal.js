@@ -2,14 +2,18 @@
 import { useState } from "react";
 import Image from 'next/image';
 import styles from './galleryStyles/galleryModal.module.css';
+import useMediaQuery from "./hooks/usedMediaQuery";
 
 export default function GalleryModal({images}) {
     const [isOpen, setIsOpen] = useState(false);
     const [ currentIndex, setCurrentnIndex] = useState(0);
+    const isMobile = useMediaQuery('(max-width: 600px)');
 
     const openModal = (index) => {
-        setCurrentnIndex(index);
-        setIsOpen(true);
+        if(!isMobile) {
+            setCurrentnIndex(index);
+            setIsOpen(true);
+        }
     };
 
     const closeModal = () => setIsOpen(false);

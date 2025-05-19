@@ -8,7 +8,7 @@ export default function EstimateForm () {
     return (
         <div className={styles.wrapper}>
             <form 
-                action="https://formsubmit.co/jaehkim23@gmail.com" 
+                action="https://formsubmit.co/barryridling@aol.com" 
                 method="POST"
                 className={styles.form}
             >

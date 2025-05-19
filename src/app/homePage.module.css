@@ -310,6 +310,14 @@
   .icon {
     font-size: 1.8rem;
   }
+
+  .heroSection h1 {
+    font-size: 1.5rem;
+  }
+
+  .heroSection p {
+    font-size: 1.2rem;
+  }
 }
 
 /* Tablet: 601px–900px */
