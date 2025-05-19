@@ -1,7 +1,9 @@
 import styles from './estimateStyle/estimateForm.module.css';
 
 export default function EstimateForm () {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NODE_ENV === 'production' 
+        ? process.env.NEXT_PUBLIC_SITE_URL 
+        : 'http://localhost:3000';
 
     return (
         <div className={styles.wrapper}>
