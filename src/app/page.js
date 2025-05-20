@@ -151,7 +151,7 @@ export default function HomePage() {
                             each client&apos;s unique vision. Our skilled team proudly serves residential homes, commercial spaces, and
                             institutional buildings such as churches and schools throughout the <strong>Dallas&nbsp;&ndash;&nbsp;Fort Worth Metroplex.</strong> From
                             small touch-ups to complete transformations, we bring precision, professionalism, and a personal touch to
-                            every project. Whether you're looking to refresh your living room, modernize your kitchen, or give your
+                            every project. Whether you&apos;re looking to refresh your living room, modernize your kitchen, or give your
                             facility a professional edge, Barry Ridling Painting is committed to bringing your space to life. Free estimates
                             and consultations are always available&ndash;let&apos;s make your vision a reality.
                         </p>
