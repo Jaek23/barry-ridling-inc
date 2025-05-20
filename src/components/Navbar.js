@@ -18,6 +18,7 @@ export default function Navbar() {
                     <div>
                         <h1 className={styles.logoText}>Barry Ridling Painting</h1>
                         <p className={styles.tagline}>Interior & Exterior Specialist</p>
+                        <p className={styles.yearline}>Since 1979</p>
                     </div>
                 </div>
             </Link>
